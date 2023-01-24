@@ -1,0 +1,9 @@
+.divisao{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item{
+    margin: 10px;
+      
+}
