@@ -1,0 +1,64 @@
+React
+
+// React uma biblioteca de criação do facebook que usamos para facilitar a criação de interfaces de UI (tudo aquilo que o cliente tem contato).
+
+// - Um dos seus principais princípio e o da componentização, aonde criamos componentes que podem ser usados em lugares direto do código, de forma que só precisamos fazer a criação desses elementos uma única vez,
+
+// - há algumas formas de fazer a criação de uma estrutura básica de React, o mais comum e pela criação própria da aplicação ou pelo vitte que basicamente ambos realizam a mesma função.
+
+// comanda para criação de uma nova aplicação.
+
+// -npx create-react-app my-app
+
+// o comando acima faz a criação de uma nova aplicação react, o nome my-app e o nome que será dado a aplicação acima, pode ser mudado. 
+
+// cd my-app
+// npm start
+
+// os comandos acima servem para entrar na nova pasta criada é dá um start no servidor interno da aplicação assim tendo um ambiente de desenvolvimento.
+
+// #Basicamente, a maioria dos arquivos aonde faremos as nossas mudanças e criações, estão dentro da pasta SRC, o APP.JS e aonde a nossa aplicação e renderizada e transformada em código html e javascript,
+
+// -Componentização ocorre por criação de elementos para nossa aplicação aonde podemos reutilizar esses elementos através das props juntamente com uma ferramenta do javascript que faz a desestruturação desse elemento que simplifica o seu uso e deixa um código mais limpo e claro. 
+// exemplo:
+
+function Loguin ({label}){ 
+
+    return(
+        <div className={styles.divisao}>
+            <label className={styles.item}>{label}</label>
+            <input className={styles.item}></input>
+        </div>
+    )
+}
+
+export default Loguin
+
+// a palavra que estar nos parâmetros da função e usada para que possamos alterar as propriedades desse elemento assim como no exemplo (label) a palavra chave e colocada entrar {} para que o javascript entenda que é um elemento de parâmetro para aquele componente.
+
+ return (
+    <div >
+      <h3>Faça seu Loguin</h3>
+      <Loguin label="Loguin: "/>
+      <Loguin label="Senha: "/>
+    </div>
+
+// Para que seja usada de forma correta deve-se passar a palavra reservada mais 
+// = e passar os valores desse componente, podemos usar valores dinâmicos
+
+Styles css no React
+
+para que possamos usar CSS nos nossos componentes React, precisamos criar um arquivo no estilo de módulos assim o react entende que aquele arquivo e um arquivo de stylização do elemento. após a criação importamos esse arquivo para dentro do nosso componente.
+exemplo de criação:
+
+loguin.module.css
+
+exemplo de importação:
+
+import styles from './loguin.module.css'
+
+as formas de sintaxe tanto no css como a nomeação das class acontece da mesma forma 
+
+CSS geral 
+
+temos um arquivo dentro da nossa pasta SRC chamado Index.css ele e o arquivo de Css geral podemos utiliza-lo para modificar todos elementos globais, exemplo font, cor, tamanhos. 
