@@ -21,6 +21,12 @@ React
 
 // -Componentização ocorre por criação de elementos para nossa aplicação aonde podemos reutilizar esses elementos através das props juntamente com uma ferramenta do javascript que faz a desestruturação desse elemento que simplifica o seu uso e deixa um código mais limpo e claro. 
 // exemplo:
+export default Loguin
+
+
+Props
+
+// a palavra que estar nos parâmetros da função e usada para que possamos alterar as propriedades desse elemento assim como no exemplo (label) a palavra chave e colocada entrar {} para que o javascript entenda que é um elemento de parâmetro para aquele componente.
 
 function Loguin ({label}){ 
 
@@ -32,10 +38,6 @@ function Loguin ({label}){
     )
 }
 
-export default Loguin
-
-// a palavra que estar nos parâmetros da função e usada para que possamos alterar as propriedades desse elemento assim como no exemplo (label) a palavra chave e colocada entrar {} para que o javascript entenda que é um elemento de parâmetro para aquele componente.
-
  return (
     <div >
       <h3>Faça seu Loguin</h3>
@@ -45,6 +47,47 @@ export default Loguin
 
 // Para que seja usada de forma correta deve-se passar a palavra reservada mais 
 // = e passar os valores desse componente, podemos usar valores dinâmicos
+
+VALIDANDO OS TYPES DE CADA PROP E PASSANDO VALORES PADRÃO
+
+podemos fazer uma validação de dados a nível de programador aonde informamos o tipo de variável que vai ser passada para prop como strig, number, boleana etc,
+a validação ocorre por meio de um módulo que já está presente no react o 
+
+import PropTypes from 'prop-types'
+
+para sua utilização usamos o nome da sua função e nomeamos a chaves com o tipo de valores a seram passados.
+
+import PropTypes from 'prop-types'
+
+function Loguin ({label}){ 
+    return(
+        <>
+            <label className={styles.item}>{label}</label>
+            <input className={styles.item}></input>
+        </>
+    )
+}
+Loguin.propTypes = {
+    label: PropTypes.string,
+}
+
+export default Loguin
+
+
+Fragment
+
+podemos retornar mais de um elemento que com a utilização do FRAGMENT o fragmente e um recurso do rect que nos possibilita a criação de vários elementos em um único componente sem a necessida de uma componente pai, como uma DIV desnecessaria para que possamos adicionar os elementos.
+exemplo de sintaxe:
+
+function Loguin ({label}){ 
+
+    return(
+        <>    <--inicio do fragment
+            <label className={styles.item}>{label}</label>
+            <input className={styles.item}></input>
+        </>   <-- fechamento do fragment   
+    )
+}
 
 Styles css no React
 
@@ -62,3 +105,21 @@ as formas de sintaxe tanto no css como a nomeação das class acontece da mesma 
 CSS geral 
 
 temos um arquivo dentro da nossa pasta SRC chamado Index.css ele e o arquivo de Css geral podemos utiliza-lo para modificar todos elementos globais, exemplo font, cor, tamanhos. 
+
+
+EVENTOS NO React
+
+os eventos no react se assemelha aos eventos usados no DOM a única diferença e que ao invez de se chamar um evento atravez do addevntlistner, colocamos o evento diretamente no elemento juntamente com sua função também podendo importar funções, para os eventos.
+
+<script>
+function Evento (){
+    function MeuEvento(){
+        alert("deu bom")}
+    return(
+        <>
+        <p>teste do evento</p>
+        <button onClick={MeuEvento}>CLIQUE</button>
+        </>)}
+export default Evento
+<script/>
+
