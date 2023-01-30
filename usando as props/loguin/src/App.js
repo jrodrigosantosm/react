@@ -1,15 +1,14 @@
-import Loguin from "./componets/loguin/Loguin";
-import Evento from "./componets/Btn";
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+
 function App() {
+ 
   return (
-    <div >
-      <h3>Faça seu Loguin</h3>
-      <Loguin label="Loguin: "/>
-      <Loguin label="Senha: "/>
-      <Evento/>
-      
-    </div>
+      <Router>
+        
+      </Router>
+     
   );
 }
-
 export default App;
+
+
